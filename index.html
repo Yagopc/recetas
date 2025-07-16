@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetario Dinámico</title>
+<p id="recipe-count">recetas en memoria:</p>
+
+  
+<link rel="stylesheet" href="./styles.css">
+<script src="./script.js"></script>
+
+
+</head>
+<body>
+
+<header>
+  <h1>Recetario Dinámico</h1>
+</header>
+
+<!-- Menú Principal -->
+<div class="container" id="menu1">
+  <h2>Menú Principal</h2>
+
+  <div>
+    <button class="primary" onclick="showMenu2()">Ver Recetas</button>
+  </div>
+  <div>
+    <button class="primary" onclick="showNewRecipeMenu()">Nueva Receta</button>
+  </div>
+  <div>
+    <button class="primary" onclick="searchRecipe()">Buscar Receta</button>
+  </div>
+  <div>
+    <button class="primary" onclick="showCategoryMenu()">Categorías</button>
+  
+</div>
+  <div>
+    <button class="primary" onclick="saveToFile()">Guardar</button>
+  </div>
+  <div>
+  <button class="primary" onclick="window.location.href='compra.html'">Compra Página</button>
+</div>
+</div>
+
+    <button class="primary" onclick="loadFromFile()">Cargar Recetas</button>
+    <input type="file" id="file-input" style="display: none;" onchange="handleFile(event)">
+  </div>
+</div>
+
+
+<!-- Menú Categorías -->
+<!-- Menú Categorías -->
+<div id="menu-categories" class="container hidden">
+  <h2>Categorías</h2>
+  <label><input type="checkbox" value="Principal"> Principal</label>
+  <label><input type="checkbox" value="Postres"> Postres</label>
+  <label><input type="checkbox" value="Sopas"> Sopas</label>
+  <label><input type="checkbox" value="Cremas"> Cremas</label>
+  <label><input type="checkbox" value="Ensaladas"> Ensaladas</label>
+  <label><input type="checkbox" value="Pescado"> Pescado</label>
+  <label><input type="checkbox" value="Carne"> Carne</label>
+    <label><input type="checkbox" value="Salsas"> Salsas</label>
+  
+  <button class="primary" onclick="showSelectedCategoryRecipes()">Mostrar Recetas</button>
+  <button class="primary" onclick="goBackToMenu1()">A Menu</button>
+</div>
+
+
+
+<!-- Menú de Recetas Guardadas -->
+<div class="container hidden" id="menu2">
+  <h2>Recetas Guardadas</h2>
+  <div class="recipe-list-container">
+    <ul id="recipe-titles"></ul>
+  </div>
+  <div id="recipe-actions" class="hidden">
+    <button class="primary" onclick="showRecipe()">Ver</button>
+    <button class="primary" onclick="editRecipe()">Modificar</button>
+    <button class="secondary" onclick="deleteRecipe()">Eliminar</button>
+  </div>
+  <button class="primary" onclick="showCategoryMenu()">Volver Categorías</button>
+<button class="primary" onclick="goBackToMenu1()">A Menu</button>
+
+</div>
+
+<!-- Visualización de Receta -->
+<div id="menu21" class="container hidden">
+  <h1 id="recipe-title"></h1>
+  <p id="recipe-category"></p>
+  <p id="recipe-ingredients"></p>
+  <p id="recipe-instructions"></p>
+  
+  <img id="recipe-image" style="display: none;" alt="Recipe Image">
+<div class="navigation-buttons">
+
+
+   <div id="navigation-buttons">
+
+  <button id="back-button" onclick="showMenu2()">Volver</button>
+<button class="primary" onclick="saveRecipeToHTML()">Guardar receta</button>
+<button class="primary" onclick="editRecipe()">Modificar</button>
+  
+</div>
+
+
+</div>
+  <button onclick="goBackToMenu2()">Volver</button>
+</div>
+
+<!-- Modificación de Receta -->
+<div class="container hidden" id="menu22">
+  <h2>Modificar Receta</h2>
+  <label for="edit-title">Título:</label>
+  <input type="text" id="edit-title">
+  <label for="edit-category">Categoría:</label>
+  <input type="text" id="edit-category">
+  <label for="edit-ingredients">Ingredientes:</label>
+  <textarea id="edit-ingredients"></textarea>
+  <label for="edit-instructions">Elaboración:</label>
+  <textarea id="edit-instructions"></textarea>
+  <label for="edit-image">Imagen URL:</label>
+  <input type="text" id="edit-image">
+  <button class="primary" onclick="saveEditedRecipe()">Guardar Cambios</button>
+  <button class="primary" onclick="goBackToMenu2()">Cancelar</button>
+</div>
+
+<!-- Nueva Receta -->
+<div class="container hidden" id="menu-new-recipe">
+  <h2>Nueva Receta</h2>
+  <label for="new-title">Título:</label>
+  <input type="text" id="new-title">
+  <label for="new-category">Categoría:</label>
+  <input type="text" id="new-category">
+  <label for="new-ingredients">Ingredientes:</label>
+  <textarea id="new-ingredients"></textarea>
+  <label for="new-instructions">Elaboración:</label>
+  <textarea id="new-instructions"></textarea>
+  <label for="new-image">Imagen URL:</label>
+  <input type="text" id="new-image">
+  <button class="primary" onclick="addNewRecipe()">Guardar</button>
+  <button class="primary" onclick="goBackToMenu1()">Cancelar</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
