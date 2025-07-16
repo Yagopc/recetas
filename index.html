@@ -4,13 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recetario Dinámico</title>
-<p id="recipe-count">recetas en memoria:</p>
-
-  
-<link rel="stylesheet" href="./styles.css">
-<script src="./script.js"></script>
-
-
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
@@ -18,48 +12,22 @@
   <h1>Recetario Dinámico</h1>
 </header>
 
+<p id="recipe-count">recetas en memoria:</p>
+
 <!-- Menú Principal -->
 <div class="container" id="menu1">
   <h2>Menú Principal</h2>
-
-  <div>
-    <button class="primary" onclick="showMenu2()">Ver Recetas</button>
-  </div>
-  
-  <div>
-    <button class="primary" onclick="showNewRecipeMenu()">Nueva Receta</button>
-  </div>
-
-  <div>
-    <button class="primary" onclick="searchRecipe()">Buscar Receta</button>
-  </div>
-
-  <div>
-    <button class="primary" onclick="showCategoryMenu()">Categorías</button>
-  
-</div>
-
-  <div>
-    <button class="primary" onclick="saveToFile()">Guardar</button>
-  </div>
-
-  <div>
+  <button class="primary" onclick="showMenu2()">Ver Recetas</button>
+  <button class="primary" onclick="showNewRecipeMenu()">Nueva Receta</button>
+  <button class="primary" onclick="searchRecipe()">Buscar Receta</button>
+  <button class="primary" onclick="showCategoryMenu()">Categorías</button>
+  <button class="primary" onclick="saveToFile()">Guardar</button>
   <button class="primary" onclick="window.location.href='https://yagopc.github.io/Compra/index.html'">Compra Página</button>
-</div>
-
-</div>
-
-    <button class="primary" onclick="loadFromFile()">Cargar Recetas</button>
-  <div>
+  <button class="primary" onclick="loadFromFile()">Cargar Recetas</button>
   <button class="primary" onclick="loadFromURL()">Actualizar Recetas</button>
-  
-  
   <input type="file" id="file-input" style="display: none;" onchange="handleFile(event)">
-  </div>
 </div>
 
-
-<!-- Menú Categorías -->
 <!-- Menú Categorías -->
 <div id="menu-categories" class="container hidden">
   <h2>Categorías</h2>
@@ -70,13 +38,10 @@
   <label><input type="checkbox" value="Ensaladas"> Ensaladas</label>
   <label><input type="checkbox" value="Pescado"> Pescado</label>
   <label><input type="checkbox" value="Carne"> Carne</label>
-    <label><input type="checkbox" value="Salsas"> Salsas</label>
-  
+  <label><input type="checkbox" value="Salsas"> Salsas</label>
   <button class="primary" onclick="showSelectedCategoryRecipes()">Mostrar Recetas</button>
   <button class="primary" onclick="goBackToMenu1()">A Menu</button>
 </div>
-
-
 
 <!-- Menú de Recetas Guardadas -->
 <div class="container hidden" id="menu2">
@@ -90,8 +55,7 @@
     <button class="secondary" onclick="deleteRecipe()">Eliminar</button>
   </div>
   <button class="primary" onclick="showCategoryMenu()">Volver Categorías</button>
-<button class="primary" onclick="goBackToMenu1()">A Menu</button>
-
+  <button class="primary" onclick="goBackToMenu1()">A Menu</button>
 </div>
 
 <!-- Visualización de Receta -->
@@ -100,21 +64,12 @@
   <p id="recipe-category"></p>
   <p id="recipe-ingredients"></p>
   <p id="recipe-instructions"></p>
-  
   <img id="recipe-image" style="display: none;" alt="Recipe Image">
-<div class="navigation-buttons">
-
-
-   <div id="navigation-buttons">
-
-  <button id="back-button" onclick="showMenu2()">Volver</button>
-<button class="primary" onclick="saveRecipeToHTML()">Guardar receta</button>
-<button class="primary" onclick="editRecipe()">Modificar</button>
-  
-</div>
-
-
-</div>
+  <div id="navigation-buttons">
+    <button id="back-button" onclick="showMenu2()">Volver</button>
+    <button class="primary" onclick="saveRecipeToHTML()">Guardar receta</button>
+    <button class="primary" onclick="editRecipe()">Modificar</button>
+  </div>
   <button onclick="goBackToMenu2()">Volver</button>
 </div>
 
@@ -152,7 +107,7 @@
   <button class="primary" onclick="goBackToMenu1()">Cancelar</button>
 </div>
 
+<!-- SOLO una vez el script -->
 <script src="script.js"></script>
-
 </body>
 </html>
