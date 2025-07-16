@@ -496,28 +496,6 @@ function updateRecipeCount() {
   const totalRecipes = recipes.length;
   recipeCountElement.textContent = `Total de recetas: ${totalRecipes}`;
 }
-
-// Inicialización del gesto de desplazamiento
-document.addEventListener("DOMContentLoaded", () => {
-  const recipeContainer = document.getElementById("menu21"); // Contenedor de la receta
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchEndX = 0;
-  let touchEndY = 0;
-
-  // Detectar cuando se inicia el toque
-  recipeContainer.addEventListener("touchstart", (event) => {
-    touchStartX = event.touches[0].clientX;
-    touchStartY = event.touches[0].clientY;
-  });
-
-  // Detectar cuando termina el toque
-  recipeContainer.addEventListener("touchend", (event) => {
-    touchEndX = event.changedTouches[0].clientX;
-    touchEndY = event.changedTouches[0].clientY;
-    handleSwipe(); // Manejar el gesto de desplazamiento
-  });
-
   function handleSwipe() {
     const swipeThreshold = 50; // Sensibilidad del gesto en píxeles
     const deltaX = touchEndX - touchStartX;
