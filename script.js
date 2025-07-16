@@ -82,7 +82,7 @@ function selectRecipe(index) {
 
 
 function loadFromURL() {
-  const url = "https://yagopc.github.io/Reservas/recetas.json";
+  const url = "https://yagopc.github.io/recetas/recetas.json";
 
   fetch(url)
     .then(response => {
