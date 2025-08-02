@@ -257,6 +257,15 @@
     "image": "https://i.ibb.co/VcmxMQnn/IMG-20250131-123046.jpg"
   },
   {
+    "title": "Hojaldre",
+    "category": "Postre",
+    "ingredients": [
+      "Harina mantequilla sal"
+    ],
+    "instructions": "",
+    "image": "https://youtu.be/SqhCHnB7H-w?si=B1XYH3T8j0_0GUdg"
+  },
+  {
     "title": "Huevos Rellenos con Atún",
     "category": "Tapas, huevos marisco",
     "ingredients": [
@@ -309,6 +318,22 @@
     ],
     "instructions": "1. Lava las lentejas y escúrrelas. Si las lentejas son secas, déjalas en remojo durante al menos 2 horas.\n2. Pela y corta las patatas en trozos medianos. Pela y trocea la zanahoria, la cebolla y añade el ajo, chorizo, especias y tomate, todo en crudo.\n3. Agrega el agua o caldo caliente y la hoja de laurel. Sube el fuego hasta que empiece a hervir. Cocina a fuego lento durante 30-40 minutos o hasta que las lentejas estén tiernas. Ajusta la sal al gusto antes de servir se le puede acompañar con un chorroncito de vinagre y de aceite de oliva virgen Crudo.",
     "image": "https://cdn.recetasderechupete.com/wp-content/uploads/2019/09/Lentejas-con-chorizo-foto.jpg"
+  },
+  {
+    "title": "Macarrones con tomate",
+    "category": "Primer plato",
+    "ingredients": [
+      "Macarrones cocidos",
+      "tomate en lata",
+      "huevos cocidos",
+      "atún",
+      "cebolla",
+      "ajo",
+      "aceite de oliva",
+      ""
+    ],
+    "instructions": "",
+    "image": ""
   },
   {
     "title": "Macarrones del cardenal",
@@ -464,6 +489,15 @@
     ],
     "instructions": "Para hacer la salsas, comenzamos picando la cebolla en juliana y pochándola en aceite de oliva virgen extra. El objetivo es una salsas blanca por lo que tendremos cuidado de no tostar la cebolla, lo que cambiaría el sabor y el color de nuestro guiso tradicional. Por eso, lo hacemos a fuego lento y vigilando hasta que la cebolla esté transparente.\nMientras tanto, salpimentamos las tajadas de pollo, las pasamos por harina y las freímos ligeramente sin dorar la piel, simplemente para tratar de hacer una costra que conseguirá que nuestro pollo esté más jugoso. En la cazuela de la cebolla, añadimos el ajo cortado en láminas y la almendra molida, y removemos rápidamente. Incorporamos a continuación el vino de Jerez y dejamos que reduzca.\n\nMetemos en la cacerola las tajadas de pollo reservadas y añadimos el caldo, que debe cubrir prácticamente el pollo. Echamos las hebras de azafrán previamente tostadas y la hoja de laurel, dejando que se haga durante unos 35 minutos, a fuego medio.\n\nCuando vemos que el pollo está casi listo, añadimos la yema del huevo cocido para que espese aún más la salsas y picamos la clara para adornar el plato al final. Completará la decoración unas láminas de almendra tostadas que espolvorearemos sobre las tajadas ya en el plato.",
     "image": "https://imag.bonviveur.com/pollo-en-pepitoria-recien-hecho_1000.webp"
+  },
+  {
+    "title": "Queso fresco",
+    "category": "Postre",
+    "ingredients": [
+      "Dos litros de leche entera \nUna cucharadita de sal \nY una tacita de vinagre"
+    ],
+    "instructions": "",
+    "image": "https://youtu.be/K9RLIYYpEfo?si=1BJHAkWD1jgOqLJK"
   },
   {
     "title": "Rosquillos de anís",
@@ -643,32 +677,5 @@
     ],
     "instructions": "Pelar las patatas cortarlas en rodajas finas freirlas con abundante aceite pero con el aceite flojo cuando estén blandas y frita escurrir aceite batir los huevos añadir las patatas a los huevos y la cebolla troceada frita",
     "image": "https://www.196flavors.com/wp-content/uploads/2020/05/vinegret-3.jpeg"
-  },
-  {
-    "title": "Macarrones con tomate",
-    "category": "Primer plato",
-    "ingredients": [
-      "Macarrones cocidos",
-      "tomate en lata",
-      "huevos cocidos",
-      "atún",
-      "cebolla",
-      "ajo",
-      "aceite de oliva",
-      ""
-    ],
-    "instructions": "",
-    "image": ""
-  },
-  {
-    "title": "queso fresco",
-    "category": "Postre",
-    "ingredients": [
-      "leche entera",
-      "sal",
-      "vinagre"
-    ],
-    "instructions": "",
-    "image": "https://youtu.be/K9RLIYYpEfo?si=5GerKtsUBBM29noQ"
   }
 ]
