@@ -677,5 +677,14 @@
     ],
     "instructions": "Pelar las patatas cortarlas en rodajas finas freirlas con abundante aceite pero con el aceite flojo cuando estén blandas y frita escurrir aceite batir los huevos añadir las patatas a los huevos y la cebolla troceada frita",
     "image": "https://www.196flavors.com/wp-content/uploads/2020/05/vinegret-3.jpeg"
-  }
+  },
+    {
+    "title": "masa empanada",
+    "category": "salsas",
+    "ingredients": [
+      ""
+    ], 
+       "instructions": "",
+          "image": "https://youtu.be/Lztx7udmMU8?si=aCfe06ZBT89KdYlq"
+    }
 ]
