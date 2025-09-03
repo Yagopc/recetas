@@ -1,10 +1,12 @@
 // Variables globales
-let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+// Variables globales
+let recipes = [];
 let currentRecipeIndex = null;
 let receta_actual = 0;
 let lastMenu = 'menu1';
 let searchResults = [];
 let currentMediaElement = null;
+let lastCategory = null; // Añadir esta variable si no existe
 
 function hideAllMenus() {
   const activeMenu = document.querySelector('.container:not(.hidden)');
