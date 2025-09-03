@@ -73,7 +73,69 @@ function selectRecipe(index) {
   recipeItems[index].classList.add('selected');
   document.getElementById('recipe-actions').classList.remove('hidden');
 }
+// Función para cargar recetas desde URL automáticamente
+async function loadRecipesFromURL() {
+  try {
+    const response = await fetch('https://yagopc.github.io/recetas/recetas.json');
+    
+    if (!response.ok) {
+      throw new Error(`Error HTTP: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    // Validar que sea un array
+    if (!Array.isArray(data)) {
+      throw new Error('El formato del archivo no es válido');
+    }
+    
+    // Aplicar validación similar a handleFile()
+    const validatedRecipes = data.map((recipe, index) => {
+      // Validar título (obligatorio)
+      if (!recipe.title || typeof recipe.title !== 'string' || recipe.title.trim() === '') {
+        throw new Error(`Error en receta ${index + 1}: "title" es obligatorio.`);
+      }
 
+      // Category opcional con valor por defecto
+      if (!recipe.category || typeof recipe.category !== 'string') {
+        recipe.category = "Sin categoría";
+      }
+
+      // Validar ingredients
+      if (!recipe.ingredients) {
+        recipe.ingredients = [];
+      } else if (typeof recipe.ingredients === 'string') {
+        recipe.ingredients = recipe.ingredients.split('\n').filter(i => i.trim() !== '');
+      } else if (!Array.isArray(recipe.ingredients)) {
+        throw new Error(`Error en receta ${index + 1}: "ingredients" debe ser lista o texto.`);
+      }
+
+      // Validar instructions
+      if (typeof recipe.instructions !== 'string') {
+        recipe.instructions = "";
+      }
+
+      // Validar image
+      if (recipe.image && typeof recipe.image !== 'string') {
+        recipe.image = "";
+      }
+      
+      return recipe;
+    });
+    
+    recipes = validatedRecipes;
+    saveToLocalStorage();
+    updateRecipeCount();
+    console.log(`Se cargaron ${recipes.length} recetas desde la URL`);
+    
+  } catch (error) {
+    console.error('Error al cargar recetas:', error);
+    // Fallback a localStorage si hay error
+    const localRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
+    recipes = localRecipes;
+    alert('No se pudieron cargar las recetas automáticamente. Usando recetas locales.');
+  }
+		  }
 // Mostrar receta
 function showRecipe() {
   const recipe = recipes[currentRecipeIndex];
