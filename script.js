@@ -606,7 +606,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalRecipes = recipes.length;
   recipeCountElement.textContent = `Total de recetas: ${totalRecipes}`;
 }
+// Inicialización al cargar la página
+document.addEventListener("DOMContentLoaded", async () => {
+  // Primero intentar cargar desde localStorage
+  const localRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
+  recipes = localRecipes;
+  updateRecipeCount();
+  
+  // Luego cargar desde URL (se sobreescribirán las locales)
+  await loadRecipesFromURL();
+  
+  // Configurar gestos táctiles
+  const recipeContainer = document.getElementById("menu21");
+  if (recipeContainer) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
 
+    recipeContainer.addEventListener("touchstart", (event) => {
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
+    });
+
+    recipeContainer.addEventListener("touchend", (event) => {
+      touchEndX = event.changedTouches[0].clientX;
+      touchEndY = event.changedTouches[0].clientY;
+      handleSwipe();
+    });
+
+    
 // Inicialización del gesto de desplazamiento
 
 
@@ -631,19 +660,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function handleSwipe() {
-    const swipeThreshold = 50; // Sensibilidad del gesto en píxeles
-    const deltaX = touchEndX - touchStartX;
-    const deltaY = touchEndY - touchStartY;
+      const swipeThreshold = 50;
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
 
-    // Verificar si el desplazamiento en X es mayor que en Y
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      if (deltaX > swipeThreshold) {
-        showprevRecipe(); // Deslizar a la derecha → receta anterior
-      } else if (deltaX < -swipeThreshold) {
-        shownextRecipe(); // Deslizar a la izquierda → siguiente receta
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > swipeThreshold) {
+          showprevRecipe();
+        } else if (deltaX < -swipeThreshold) {
+          shownextRecipe();
+        }
       }
     }
   }
+});
 
   updateRecipeCount(); // Actualizar el contador de recetas al cargar la página
 });
